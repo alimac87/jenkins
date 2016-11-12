@@ -1,5 +1,12 @@
 @Library('github.com/fabric8io/fabric8-pipeline-library@master')
 
+def apiUrl = new URL("https://raw.githubusercontent.com/alimac87/jenkins/master/build.gradle")
+JsonSlurper rs = restGetURL{
+  url = apiUrl
+}
+
+println rs
+
 def BUILD_VERSION = "1.0.${currentBuild.number}"
 
 timestamps {
