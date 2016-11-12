@@ -1,5 +1,11 @@
 node ('linux'){
   stage 'Build'
   checkout scm
-  sh './gradlew clean build'
+  sh 'echo Build'
+ }
+ 
+ node ('linux'){
+  stage 'Accept'
+  checkout scm
+  sh 'echo Accept'
  }
