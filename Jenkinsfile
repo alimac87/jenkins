@@ -1,3 +1,5 @@
+@Library('github.com/fabric8io/fabric8-pipeline-library@master')
+
 def BUILD_VERSION = "1.0.${currentBuild.number}"
 
 timestamps {
