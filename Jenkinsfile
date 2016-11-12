@@ -1,8 +1,9 @@
 @Library('github.com/fabric8io/fabric8-pipeline-library@master')
 
-def apiUrl = new URL("https://www.google.com")
+def apiUrl = new URL("https://raw.githubusercontent.com/alimac87/jenkins/master/build.gradle")
 def rs = restGetURL{
   url = apiUrl
+  authString = ""
 }
 
 println rs
