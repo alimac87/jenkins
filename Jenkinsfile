@@ -2,15 +2,15 @@ timestamps {
 node ('master'){
   stage 'Build'
   checkout scm
-  sh 'echo Build'
-  sh 'echo Build >> out.txt'
+  sh './gradlew clean build'
+  sh 'ls build'
+  stash includes: 'build/*', name: 'build'
  }
  
  node ('slave'){
   stage 'Accept'
   checkout scm
-  sh 'echo Accept'
-  sh 'echo Accept >> out.txt'
-  sh 'cat out.txt'
+  unstash 'build'
+  sh 'ls build'
  }
  }
