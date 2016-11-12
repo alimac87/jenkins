@@ -11,6 +11,8 @@ node ('master'){
   withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'alimac87.github', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
     sh("git config credential.username ${env.GIT_USERNAME}")
     sh("git config credential.helper '!echo password=\$GIT_PASSWORD; echo'")
+    sh("git config user.email \"${env.GIT_USERNAME}@example.com\"")
+    sh("git config user.name \"${env.GIT_USERNAME}\"")
     sh("git tag -a ${BUILD_VERSION} -m 'Create tag'")
     sh("GIT_ASKPASS=true git push origin --tags")
   }
