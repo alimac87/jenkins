@@ -4,7 +4,7 @@ node ('master'){
   checkout scm
   sh './gradlew clean build'
   sh 'ls build'
-  stash includes: 'build/*', name: 'build'
+  stash includes: 'build/**/*', name: 'build'
  }
  
  node ('slave'){
