@@ -1,12 +1,14 @@
 node ('linux'){
   stage 'Build'
   checkout scm
-  sh 'echo Build > abc.txt'
+  sh 'echo Build'
+  sh 'echo Build >> out.txt'
  }
  
  node ('linux'){
   stage 'Accept'
   checkout scm
   sh 'echo Accept'
+  echo Accept >> out.txt
   sh 'cat abc.txt'
  }
