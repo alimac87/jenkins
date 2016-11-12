@@ -10,5 +10,5 @@ node ('linux'){
   checkout scm
   sh 'echo Accept'
   echo Accept >> out.txt
-  sh 'cat abc.txt'
+  sh 'cat out.txt'
  }
