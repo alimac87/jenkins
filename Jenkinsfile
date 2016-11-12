@@ -9,6 +9,6 @@ node ('linux'){
   stage 'Accept'
   checkout scm
   sh 'echo Accept'
-  echo Accept >> out.txt
+  sh 'echo Accept >> out.txt'
   sh 'cat out.txt'
  }
