@@ -1,3 +1,4 @@
+timestamps {
 node ('master'){
   stage 'Build'
   checkout scm
@@ -11,4 +12,5 @@ node ('master'){
   sh 'echo Accept'
   sh 'echo Accept >> out.txt'
   sh 'cat out.txt'
+ }
  }
