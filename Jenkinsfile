@@ -1,11 +1,11 @@
-node ('linux'){
+node ('master'){
   stage 'Build'
   checkout scm
   sh 'echo Build'
   sh 'echo Build >> out.txt'
  }
  
- node ('linux'){
+ node ('slave'){
   stage 'Accept'
   checkout scm
   sh 'echo Accept'
