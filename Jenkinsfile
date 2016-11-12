@@ -1,4 +1,4 @@
-def BUILD_VERSION = "1.0.${currentbuild.number}"
+def BUILD_VERSION = "1.0.${currentBuild.number}"
 
 timestamps {
 node ('master'){
