@@ -6,7 +6,7 @@ node ('master'){
   checkout scm
   sh './gradlew clean build'
   sh 'ls build'
-  //stash includes: 'build/**/*', name: 'build'
+  stash includes: 'build/**/*', name: 'build'
   try {
   withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'alimac87.github', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
     sh("git config credential.username ${env.GIT_USERNAME}")
