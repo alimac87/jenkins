@@ -1,6 +1,6 @@
 @Library('github.com/fabric8io/fabric8-pipeline-library@master')
 
-def apiUrl = new URL("https://www.google.com")
+def apiUrl = new URL("https://raw.githubusercontent.com/alimac87/jenkins/master/abc.json")
 def rs = restGetURL{
   url = apiUrl
   authString = ""
