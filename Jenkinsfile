@@ -35,6 +35,10 @@ timestamps {
     }
   }
 
+  timeout(time:5, unit:'DAYS') {
+	  input message:'Approve deployment?'
+  }
+  
   node ('slave'){
     stage 'Accept'
     checkout scm
