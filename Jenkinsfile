@@ -34,7 +34,9 @@ timestamps {
       sh("git config --unset credential.helper")
     }
   }
-
+  
+  
+  stage 'Approval'
   timeout(time:5, unit:'MINUTES') {
 	  input message:'Approve deployment?'
   }
