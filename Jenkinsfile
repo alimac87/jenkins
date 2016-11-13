@@ -17,7 +17,7 @@ timestamps {
 	sh 'echo `pwd`'
     sh './gradlew clean build'
 	sh 'echo `pwd`'
-	ls 'build/'
+	sh 'ls build/'
     junit 'build/test-results/test/*.xml'
     stash includes: 'build/**/*', name: 'build'
     try {
