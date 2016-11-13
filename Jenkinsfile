@@ -1,4 +1,4 @@
-@Library('gitlab')
+@Library('gitlab@master2')
 
 def apiUrl = new URL("https://raw.githubusercontent.com/alimac87/jenkins/master/abc.json")
 def rs = restGetURL{
