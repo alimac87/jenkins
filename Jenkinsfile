@@ -15,7 +15,7 @@ timestamps {
     stage 'Build'
     checkout scm
     sh './gradlew clean build'
-    sh 'ls build'
+    junit 'uild/test-results/test/*.xml'
     stash includes: 'build/**/*', name: 'build'
     try {
       withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'alimac87.github', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
