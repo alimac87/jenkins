@@ -1,4 +1,4 @@
-@Library('https://gitlab.com/alimac87/fabric8-pipeline-library/raw/master')
+@Library('gitlab')
 
 def apiUrl = new URL("https://raw.githubusercontent.com/alimac87/jenkins/master/abc.json")
 def rs = restGetURL{
