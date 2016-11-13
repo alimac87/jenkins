@@ -19,7 +19,7 @@ timestamps {
 	sh 'echo `pwd`'
 	sh 'ls build/'
     junit 'build/test-results/test/*.xml'
-    stash includes: 'build/**/*', name: 'build'
+    stash includes: 'build/**/*,.gradle/**/*', name: 'build'
     try {
       withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'alimac87.github', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
         sh("git config credential.username ${env.GIT_USERNAME}")
@@ -40,5 +40,6 @@ timestamps {
     checkout scm
     unstash 'build'
     sh 'ls build'
+    sh 'ls .gradle'
   }
 }
